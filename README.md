@@ -1,26 +1,40 @@
-# European Leagues Analysis
+# European Football: Player Performance Across Age
 
-This is an analysis created for Udacity advanced data analysis nano degree, the goal is to provide basic analysis on any dataset. 
+An exploratory analysis of how professional football players' performance changes with age, using the European Soccer Database covering matches and player attributes from 2008–2016.
 
-Using [European Soccer Database](https://www.kaggle.com/hugomathien/soccer) on kaggle, the dataset contains data for European leagues matches between 2008 - 2016. 
+## Question
 
+**At what ages do football players tend to perform above or below their career average?**
 
-## Key question
-
-**How does age affect players performance?** 
-
-To answer this question, I've used the player rating as an indication of the performance, tracking the change % in player rating against his own average rating across different ages, then plot the average change % for all the players in the dataset.
+Player rating is used as a proxy for performance. For each observation, the analysis compares a player's rating with that player's own average, then aggregates the percentage difference by age. This within-player normalization makes the age pattern easier to interpret across players with different baseline ability.
 
 ## Key finding
-![KeyFinding](https://github.com/AhmedOmarEissa/EuropeanLeaguesAnalysis/blob/master/Key%20Finding.png)
 
-Players are on top of their game between 24 - 32 years with 2.5% increase in their rating vs their own average. 
+![Average player rating change by age](Key%20Finding.png)
 
+Players performed most strongly between approximately ages 24 and 32, with ratings averaging about 2.5% above their individual career means.
 
-## What next? 
-If I have more time on the future, I like to create a tool where user can add the player features and current rating, and the tool predict what are the areas will see improvement in performance and what areas are expected to decline in performance
+## Approach
 
-## Links: 
-[Kaggle notebook](https://www.kaggle.com/ahmedomareissa/players-rating-change-with-age)
+- Load and inspect the European Soccer Database
+- Clean and join player and player-attribute records
+- Calculate each player's average rating
+- Express individual observations as a percentage difference from that baseline
+- Aggregate and visualize the relationship between age and relative performance
 
-[NB Viwere](https://nbviewer.jupyter.org/github/AhmedOmarEissa/EuropeanLeaguesAnalysis/blob/master/Players%20rating%20change%20with%20age.ipynb)
+## Repository contents
+
+- [Analysis notebook](Players%20rating%20change%20with%20age.ipynb)
+- Supporting data and exported visualization
+
+## Tools
+
+Python, pandas, NumPy, Matplotlib, Seaborn, SQLite, and Jupyter Notebook.
+
+## Context and limitations
+
+This project was created as part of the Udacity Advanced Data Analysis Nanodegree. Ratings are an imperfect proxy for real-world performance, the data ends in 2016, and the analysis is descriptive rather than causal.
+
+## Further work
+
+A useful extension would be a player-level forecasting tool that estimates which attributes are likely to improve or decline based on current age, position, rating, and historical development patterns.
